@@ -251,7 +251,7 @@ dwv.tool.Draw = function (app)
                 delete points[points.length-1].tmp;
             }
             // TODO: mouseup 释放鼠标
-            started = true;
+            started = false;
         }
     };
 
