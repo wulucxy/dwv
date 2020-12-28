@@ -427,13 +427,8 @@ dwv.App = function ()
      * @fires dwv.App#load-error
      * @fires dwv.App#load-abort
      */
-    this.loadURLs = function (urls, requestHeaders, withCredentials) {
-        // load options
-        var options = {
-          'requestHeaders': requestHeaders,
-          'withCredentials': withCredentials
-        };
-        loadController.loadURLs(urls, options);
+    this.loadURLs = function (urls, options) {
+      loadController.loadURLs(urls, options);
     };
 
     /**
