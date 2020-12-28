@@ -401,9 +401,10 @@ dwv.DrawController = function (drawDiv)
                 // shape
                 var shape = stateGroup.getChildren( dwv.draw.isNodeNameShape )[0];
                 // create the draw command
+                // TODO: setDrawing 设置 silent 为 true
                 var cmd = new dwv.tool.DrawGroupCommand(
                     stateGroup, shape.className,
-                    drawLayer );
+                    drawLayer, true );
                 // draw command callbacks
                 cmd.onExecute = cmdCallback;
                 cmd.onUndo = cmdCallback;

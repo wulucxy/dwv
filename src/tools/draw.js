@@ -250,6 +250,8 @@ dwv.tool.Draw = function (app)
             if ( typeof points[points.length-1].tmp !== "undefined" ) {
                 delete points[points.length-1].tmp;
             }
+            // TODO: mouseup 释放鼠标
+            started = true;
         }
     };
 
