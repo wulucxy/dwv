@@ -1,5 +1,5 @@
 {
-  "name": "dwv",
+  "name": "@wulucxy/dwv", 
   "version": "0.28.0-beta",
   "description": "DICOM Web Viewer.",
   "keywords": [
@@ -8,11 +8,11 @@
     "imaging"
   ],
   "license": "GPL-3.0",
-  "author": "ivmartel <ivmartel@gmail.com>",
-  "homepage": "https://ivmartel.github.io/dwv/",
+  "author": "wulucxy <wulucxy@gmail.com>",
+  "homepage": "https://github.com/wulucxy/dwv",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ivmartel/dwv.git"
+    "url": "https://github.com/wulucxy/dwv.git"
   },
   "main": "build/dist/dwv.min.js",
   "dependencies": {
