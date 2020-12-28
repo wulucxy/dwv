@@ -1,6 +1,6 @@
 {
-  "name": "dwv",
-  "version": "0.28.0-beta.2",
+  "name": "@wulucxy/dwv",
+  "version": "0.28.1-beta.3",
   "description": "DICOM Web Viewer.",
   "keywords": [
     "DICOM",
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git://github.com/ivmartel/dwv.git"
   },
-  "main": "dist/dwv.min.js",
+  "main": "build/dist/dwv.min.js",
   "dependencies": {
     "i18next": "~12.1.0",
     "i18next-browser-languagedetector": "~3.0.0",
