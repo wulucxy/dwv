@@ -246,7 +246,6 @@ dwv.tool.Draw = function (app)
             // reset flag
             started = false;
         } else {
-            started = false;
             // remove temporary flag
             if ( typeof points[points.length-1].tmp !== "undefined" ) {
                 delete points[points.length-1].tmp;
