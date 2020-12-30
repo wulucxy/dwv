@@ -55,25 +55,25 @@ dwv.tool.draw.RectangleFactory.prototype.create = function (points, style, image
         fill: style.getLineColour(),
         name: "text"
     });
-    ktext.textExpr = "{surface}";
-    ktext.longText = "";
-    ktext.quant = quant;
-    ktext.setText(dwv.utils.replaceFlags(ktext.textExpr, ktext.quant));
+    // ktext.textExpr = "{surface}";
+    // ktext.longText = "";
+    // ktext.quant = quant;
+    // ktext.setText(dwv.utils.replaceFlags(ktext.textExpr, ktext.quant));
 
     // label
-    var klabel = new Konva.Label({
-        x: rectangle.getBegin().getX(),
-        y: rectangle.getEnd().getY() + 10,
-        name: "label"
-    });
-    klabel.add(ktext);
-    klabel.add(new Konva.Tag());
+    // var klabel = new Konva.Label({
+    //     x: rectangle.getBegin().getX(),
+    //     y: rectangle.getEnd().getY() + 10,
+    //     name: "label"
+    // });
+    // klabel.add(ktext);
+    // klabel.add(new Konva.Tag());
 
     // return group
     var group = new Konva.Group();
     group.name("rectangle-group");
     group.add(kshape);
-    group.add(klabel);
+    // group.add(klabel);
     group.visible(true); // dont inherit
     return group;
 };
@@ -150,11 +150,11 @@ dwv.tool.draw.UpdateRect = function (anchor, image)
     var p2d1 = new dwv.math.Point2D(bottomRight.x(), bottomRight.y());
     var rect = new dwv.math.Rectangle(p2d0, p2d1);
     // update text
-    var quant = image.quantifyRect( rect );
-    var ktext = klabel.getText();
-    ktext.quant = quant;
-    ktext.setText(dwv.utils.replaceFlags(ktext.textExpr, ktext.quant));
-    // update position
-    var textPos = { 'x': rect.getBegin().getX(), 'y': rect.getEnd().getY() + 10 };
-    klabel.position( textPos );
+//     var quant = image.quantifyRect( rect );
+//     var ktext = klabel.getText();
+//     ktext.quant = quant;
+//     ktext.setText(dwv.utils.replaceFlags(ktext.textExpr, ktext.quant));
+//     // update position
+//     var textPos = { 'x': rect.getBegin().getX(), 'y': rect.getEnd().getY() + 10 };
+//     klabel.position( textPos );
 };

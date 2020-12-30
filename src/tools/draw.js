@@ -144,6 +144,12 @@ dwv.tool.Draw = function (app)
      */
     var drawLayer = null;
 
+    resetStarted = function(){
+      started = false;
+      points = [];
+      lastPoint = null;
+      tmpShapeGroup = null;
+    }
     /**
      * Handle mouse down event.
      * @param {Object} event The mouse down event.
@@ -338,7 +344,8 @@ dwv.tool.Draw = function (app)
     this.keydown = function(event){
         event.context = "dwv.tool.Draw";
         app.onKeydown(event);
-
+        // TODO: 监听slice-change 事件
+        app.addEventListener('slice-change', resetStarted);
         // press delete key
         if (event.keyCode === 46 && shapeEditor.isActive()) {
             // get shape
@@ -366,7 +373,9 @@ dwv.tool.Draw = function (app)
             tmpShapeGroup.destroy();
         }
         // create shape group
-        tmpShapeGroup = currentFactory.create(tmpPoints, self.style, app.getImage());
+        tmpShapeGroup = currentFactory.create(tmpPoints, self.style, app.getImage(), {
+          status: 0
+        });
         // do not listen during creation
         var shape = tmpShapeGroup.getChildren( dwv.draw.isNodeNameShape )[0];
         shape.listening(false);
@@ -387,7 +396,9 @@ dwv.tool.Draw = function (app)
             tmpShapeGroup.destroy();
         }
         // create final shape
-        var finalShapeGroup = currentFactory.create(finalPoints, self.style, app.getImage());
+        var finalShapeGroup = currentFactory.create(finalPoints, self.style, app.getImage(), {
+          status: 1,
+        });
         finalShapeGroup.id( dwv.math.guid() );
 
         // get the position group

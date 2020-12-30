@@ -41,7 +41,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: ['resources/module/intro.js', 'src/**/*.js', 'resources/module/outro.js'],
-                dest: 'build/dist/<%= pkg.name %>.js'
+                dest: 'build/dist/dwv.js'
             }
         },
         uglify: {
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'build/dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'build/dist/dwv.min.js': ['<%= concat.dist.dest %>']
                 }
             }
         },

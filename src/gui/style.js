@@ -43,7 +43,7 @@ dwv.html.Style = function ()
      * @private
      * @type Number
      */
-    var strokeWidth = 2;
+    var strokeWidth = 4;
 
     /**
      * Get the font family.

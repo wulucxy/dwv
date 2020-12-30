@@ -33,7 +33,7 @@ dwv.tool.draw.RoiFactory = function ()
  * @param {Object} style The drawing style.
  * @param {Object} image The associated image.
  */
-dwv.tool.draw.RoiFactory.prototype.create = function (points, style /*, image*/)
+dwv.tool.draw.RoiFactory.prototype.create = function (points, style, image, options)
 {
     // physical shape
     var roi = new dwv.math.ROI();
@@ -52,7 +52,8 @@ dwv.tool.draw.RoiFactory.prototype.create = function (points, style /*, image*/)
         stroke: style.getLineColour(),
         strokeWidth: style.getScaledStrokeWidth(),
         name: "shape",
-        closed: true
+        // TODO: 是否为完成模式 
+        closed: options.status === 1
     });
 
     // text
