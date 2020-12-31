@@ -63,6 +63,12 @@ dwv.App = function ()
     // listeners
     var listeners = {};
 
+    var shapeEditor = new dwv.tool.ShapeEditor(this);
+
+    this.getShapeEditor = function(){
+      return shapeEditor
+    }
+
     /**
      * Get the image.
      * @return {Image} The associated image.

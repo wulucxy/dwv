@@ -97,7 +97,7 @@ dwv.tool.Draw = function (app)
      * @private
      * @type Object
      */
-    var shapeEditor = new dwv.tool.ShapeEditor(app);
+    var shapeEditor = app.getShapeEditor();
 
     // associate the event listeners of the editor
     //  with those of the draw tool
